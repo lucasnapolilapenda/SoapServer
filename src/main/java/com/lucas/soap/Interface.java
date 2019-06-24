@@ -24,6 +24,6 @@ public interface Interface {
     String updateBookInfo (Book book);
 
     @WebMethod
-    Void deleteBook (Integer id);
+    String deleteBook (Integer id);
 
 }
