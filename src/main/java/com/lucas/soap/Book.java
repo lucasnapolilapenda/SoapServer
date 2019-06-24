@@ -39,7 +39,7 @@ public class Book implements Serializable {
         return isbn;
     }
 
-    public void String (String isbn) {
+    public void setIsbn (String isbn) {
         this.isbn = isbn;
     }
 

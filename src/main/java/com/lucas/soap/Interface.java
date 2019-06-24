@@ -1,11 +1,13 @@
 package com.lucas.soap;
 
-
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+
 
 
 @WebService
+@SOAPBinding(style = SOAPBinding.Style.RPC)
 public interface Interface {
 
     @WebMethod
@@ -15,7 +17,7 @@ public interface Interface {
     String getBookInfo (Integer id);
 
     @WebMethod
-    String getBookInfoByISBN (Book book);
+    String getBookInfoByISBN (String isbn);
 
     @WebMethod
     String addBook (Book book);

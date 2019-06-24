@@ -7,4 +7,7 @@
     <endpoint name="Calculation"
               implementation="com.lucas.soap.ServicesCalculation"
               url-pattern="/calculation"/>
+    <endpoint name="Calculation"
+              implementation="com.lucas.soap.LibraryServices"
+              url-pattern="/library"/>
 </endpoints>
