@@ -34,11 +34,8 @@ public class LibraryServices implements Interface {
     @Override
     public String getBookInfo(Integer id) {
 
-        Response response = new Response ();
         if (BookRepository.getRepository ().get ( id ) == null) {
-            response.setStatus ( false );
-            response.setMessage ( "Book Does not Exist" );
-            return response.getMessage ();
+            return messageWo ( id );
         }
 
 
@@ -54,11 +51,6 @@ public class LibraryServices implements Interface {
                 "author: " + bookAuthor + "\n" +
                 "publisher: " + bookPublisher + "\n" +
                 "description: " + bookDescription + "\n";
-
-
-
-
-
 
         return bookInfo;
 
@@ -104,19 +96,20 @@ public class LibraryServices implements Interface {
 
     @Override
     public String deleteBook(Integer id) {
+
         Response response = new Response ();
         if (BookRepository.getRepository ().get ( id ) == null) {
-            response.setStatus ( false );
-            response.setMessage ( "Book Does not Exist" );
-            return response.getMessage ();
+        return messageWo ( id );
         }
+
+
         BookRepository.getRepository ().remove ( id );
         response.setStatus ( true );
         response.setMessage ( "Book deleted successfully" );
         return response.getMessage ();
     }
 
-    public Book bookCreation (Book book){
+    private Book bookCreation (Book book){
         Book newBook = new Book ();
         newBook.setId ( book.getId () );
         newBook.setIsbn (book.getIsbn ());
@@ -127,6 +120,17 @@ public class LibraryServices implements Interface {
 
         return newBook;
     }
+
+    private String messageWo (Integer id) {
+
+        Response response = new Response ();
+        response.setStatus ( false );
+        response.setMessage ( "Book Does not Exist" );
+        return response.getMessage ();
+
+    }
+
+
 
 }
 
