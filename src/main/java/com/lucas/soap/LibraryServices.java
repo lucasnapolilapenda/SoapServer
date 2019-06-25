@@ -1,6 +1,7 @@
 package com.lucas.soap;
 
 import javax.jws.WebService;
+import java.util.LinkedList;
 import java.util.Set;
 
 
@@ -58,7 +59,34 @@ public class LibraryServices implements Interface {
 
     @Override
     public String getBookInfoByISBN(String isbn) {
-        return null;
+        String bookInfo = "";
+
+        Set <Integer> ids = BookRepository.getRepository().keySet ();
+        LinkedList <Book> bookList = new LinkedList <> (  );
+
+        for(Integer id : ids) {
+            Book book = new Book ();
+            book.setId (BookRepository.getRepository ().get ( id ).getId ());
+            book.setIsbn (BookRepository.getRepository ().get ( id ).getIsbn ());
+            book.setTitle (BookRepository.getRepository ().get ( id ).getTitle ());
+            book.setAuthor (BookRepository.getRepository ().get ( id ).getAuthor ());
+            book.setPublisher (BookRepository.getRepository ().get ( id ).getPublisher ());
+            book.setDescription (BookRepository.getRepository ().get ( id ).getDescription ());
+            bookList.add ( book );
+        }
+            for (Book book : bookList) {
+            if (book.getIsbn ().equals ( isbn )) {
+                bookInfo = "id: " + book.getId ( ) + "\n" +
+                        "isbd: " + book.getIsbn ( ) + "\n" +
+                        "title: " + book.getTitle ( ) + "\n" +
+                        "author: " + book.getAuthor ( ) + "\n" +
+                        "publisher: " + book.getPublisher ( ) + "\n" +
+                        "description: " + book.getDescription ( ) + "\n";
+                return bookInfo;
+            }
+        }
+
+        return "Book does not exist";
     }
 
     @Override
