@@ -1,7 +1,7 @@
 package com.lucas.soap;
 /** Library Solos Rest.
  * @author Lucas Napoli
- * @author https://github.com/lucasnapolilapenda/rest
+ * @author https://github.com/lucasnapolilapenda/SoapServer
  * @version 1.1
  * @since 1.0
  */

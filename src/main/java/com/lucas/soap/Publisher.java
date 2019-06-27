@@ -1,7 +1,16 @@
 package com.lucas.soap;
+/** Library Solos Rest.
+ * @author Lucas Napoli
+ * @author https://github.com/lucasnapolilapenda/SoapServer
+ * @version 1.1
+ * @since 1.0
+ */
 
 import javax.xml.ws.Endpoint;
 import java.util.Scanner;
+/**
+ * Point of entry, represents publisher implementation
+ */
 
 public class Publisher {
     public static void main (String[] args) {

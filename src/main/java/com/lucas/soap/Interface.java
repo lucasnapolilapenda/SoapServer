@@ -1,7 +1,7 @@
 package com.lucas.soap;
 /** Library Solos SOAP.
  * @author Lucas Napoli
- * @author https://github.com/lucasnapolilapenda/SoapActivity/tree/master/src/main/java/com/lucas/soap
+ * @author https://github.com/lucasnapolilapenda/SoapServer
  * @version 1.1
  * @since 1.0
  */
@@ -27,15 +27,16 @@ public interface Interface {
      */
     @WebMethod
     String listAllBooks();
+
+
     /**
      *
      * @return
      *     returns java.lang.String
      *     Info by ID
-     * @param id
+     * @param id is the id a integer to find a book
      *
      */
-
     @WebMethod
     String getBookInfo (Integer id);
     /**
@@ -43,7 +44,7 @@ public interface Interface {
      * @return
      *     returns java.lang.String
      *     Info by isbn
-     * @param isbn
+     * @param isbn is the ISBN a String to find a book
      */
 
     @WebMethod
@@ -53,7 +54,7 @@ public interface Interface {
      * @return
      *     returns java.lang.String
      *     Add Book
-     * @param book
+     * @param book is the book as an object with the properties
      */
 
     @WebMethod
@@ -62,8 +63,8 @@ public interface Interface {
      *
      * @return
      *     returns java.lang.String
-     *     Add Book
-     * @param book
+     *     Update Book
+     * @param book is the book as an object with the properties
      */
 
     @WebMethod
@@ -72,8 +73,8 @@ public interface Interface {
      *
      * @return
      *     returns java.lang.String
-     *     Add Book
-     * @param id
+     *     Delete Book
+     * @param id is the id a integer to find a book
      */
 
     @WebMethod

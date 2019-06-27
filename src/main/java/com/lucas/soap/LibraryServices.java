@@ -1,14 +1,30 @@
 package com.lucas.soap;
+/** Library Solos Rest.
+ * @author Lucas Napoli
+ * @author https://github.com/lucasnapolilapenda/SoapServer
+ * @version 1.1
+ * @since 1.0
+ */
+
+
 
 import javax.jws.WebService;
 import java.util.LinkedList;
 import java.util.Set;
 
-
+/**
+ * Represents all services implementation
+ */
 @WebService(endpointInterface = "com.lucas.soap.LibraryServices")
 
 public class LibraryServices implements Interface {
 
+    /**
+     *
+     * @return
+     *     returns java.lang.String
+     *     List of books
+     */
     @Override
     public String listAllBooks() {
 
@@ -32,6 +48,14 @@ public class LibraryServices implements Interface {
         return bookList;
     }
 
+    /**
+     *
+     * @return
+     *     returns java.lang.String
+     *     Info by ID
+     * @param id is an integer to find a book
+     *
+     */
     @Override
     public String getBookInfo(Integer id) {
 
@@ -57,6 +81,13 @@ public class LibraryServices implements Interface {
 
     }
 
+    /**
+     *
+     * @return
+     *     returns java.lang.String
+     *     Info by isbn
+     * @param isbn is String with the properties
+     */
     @Override
     public String getBookInfoByISBN(String isbn) {
         String bookInfo = "";
@@ -89,6 +120,13 @@ public class LibraryServices implements Interface {
         return "Book does not exist";
     }
 
+    /**
+     *
+     * @return
+     *     returns java.lang.String
+     *     Add Book
+     * @param book is book as object with the properties
+     */
     @Override
     public String addBook(Book book) {
 
@@ -106,6 +144,13 @@ public class LibraryServices implements Interface {
 
     }
 
+    /**
+     *
+     * @return
+     *     returns java.lang.String
+     *     Update Book
+     * @param book is book as object with the properties
+     */
     @Override
     public String updateBookInfo(Book book) {
 
@@ -122,6 +167,14 @@ public class LibraryServices implements Interface {
             return response.getMessage ();
     }
 
+
+    /**
+     *
+     * @return
+     *     returns java.lang.String
+     *     Delete Book
+     * @param id is an integer to find a book
+     */
     @Override
     public String deleteBook(Integer id) {
 
@@ -137,6 +190,14 @@ public class LibraryServices implements Interface {
         return response.getMessage ();
     }
 
+    /**
+     *
+     * @return
+     *     returns java.lang.String
+     *     Book object creation
+     * @param book
+     */
+
     private Book bookCreation (Book book){
         Book newBook = new Book ();
         newBook.setId ( book.getId () );
@@ -148,6 +209,14 @@ public class LibraryServices implements Interface {
 
         return newBook;
     }
+
+    /**
+     *
+     * @return
+     *     returns java.lang.String
+     *     Message with out book
+     * @param id is book as object with the properties
+     */
 
     private String messageWo (Integer id) {
 
