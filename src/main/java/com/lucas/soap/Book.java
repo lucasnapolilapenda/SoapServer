@@ -1,4 +1,14 @@
 package com.lucas.soap;
+/** Library Solos Rest.
+ * @author Lucas Napoli
+ * @author https://github.com/lucasnapolilapenda/rest
+ * @version 1.1
+ * @since 1.0
+ */
+
+/**
+ * Represents all the book information
+ */
 
 import java.io.Serializable;
 

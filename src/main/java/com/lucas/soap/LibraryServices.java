@@ -96,7 +96,7 @@ public class LibraryServices implements Interface {
 
         Response response = new Response ();
         if (BookRepository.getRepository ().get ( book.getId ()) != null ) {
-            response.setMessage ( "Book already exists" );
+            response.setMessage ( "Book already exists, please use a different Id value" );
             return response.getMessage ();
         }
 
@@ -155,10 +155,6 @@ public class LibraryServices implements Interface {
         response.setStatus ( false );
         response.setMessage ( "Book Does not Exist" );
         return response.getMessage ();
-
     }
-
-
-
 }
 
