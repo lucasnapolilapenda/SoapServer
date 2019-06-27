@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>Server has been initiated, confirgure your client</h2>
 </body>
 </html>
