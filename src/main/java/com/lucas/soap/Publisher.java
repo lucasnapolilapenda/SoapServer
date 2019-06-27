@@ -1,6 +1,5 @@
 package com.lucas.soap;
 
-
 import javax.xml.ws.Endpoint;
 import java.util.Scanner;
 
